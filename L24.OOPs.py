@@ -27,8 +27,6 @@
 
 
 
-
-
 # class housedesign:
 #     colour="white"
 #     price=50000

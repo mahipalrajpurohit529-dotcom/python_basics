@@ -753,13 +753,13 @@ my dream is to succeed as a data scientist and move to germany for a better qual
 
 
 
-# make a class and make a method that prints hi
-# make another class that has same named method that prints hello
-# make a third class that inharits both classes(a,b)
-# and run those two methods using the object of third class
-# then change the order of inharitance and see the difference
-# it is called multiple inharitance 
-# read about it
+# # make a class and make a method that prints hi
+# # make another class that has same named method that prints hello
+# # make a third class that inharits both classes(a,b)
+# # and run those two methods using the object of third class
+# # then change the order of inharitance and see the difference
+# # it is called multiple inharitance 
+# # read about it
 
 
 
@@ -798,18 +798,129 @@ my dream is to succeed as a data scientist and move to germany for a better qual
 # Call both method
 
 
-class person :
-    def __init__(self,name,age):
-        self.name = name
-        self.age = age
+# class person :
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
     
-    def showperson(self):
-        print(f"age ==> {self.age}  ::  name ==> {self.name}")
+#     def showperson(self):
+#         print(f"age ==> {self.age}  ::  name ==> {self.name}")
 
-class student (person):
-    def __init__(self,course):
-        self.course=course
+# class student (person):
+#     def __init__(self,name,age,course):
+#         self.course=course
+#         super().__init__(name,age)
+
+#     def showstudent(self):
+#         print(self.course ,self.age,self.name)  
+
+# class A:
+#     x=1
+#     def __init__(self):
+#         print("A init")
+#         self.x = 5
+
+# class B(A):
+#     def __init__(self):
+#         print("B init")
+# obj = B()
+# print(obj.x)
+
+
+
+
+# stO1 = student("mahipal",25,"data science")
+# stO1.showstudent()
+# stO1.showperson()
+
+
+
+
+
+
+
+
+
+# features of oops :-
+# 1. encapsulation:-
+    # bundling of data and methods that operate on that data within one unit
+    # helps to restrict direct access to some of the object's components
+    # helps to prevent accidental modification of data
+# 2. inheritance
+# 3. polymorphism:-
+    # ability of different classes to be treated as instances of the same class through a common interface
+    # allows methods to do different things based on the object it is acting upon
+    # helps to reduce complexity by allowing the same interface to be used for different underlying forms (data types)
+# 4. abstraction
+# 5. security
+# 6. reusability
+# why oops :-
+# 1. normal function doesnt give security to the data, anyone can access and modify the data
+# 2. reusability: classes can be reused in other programs, functions cannot be reused easily
+        # you might think that functions can also be reused but in large programs it becomes difficult to   manage
+        # also anyone can use the function and modify it, which can lead to errors  
+        # but classses provide better reusability and security
+# 3. easy to manage: in large programs it is easier to manage classes and objects rather than functions
+# 4. data hiding: classes can hide data from outside world, functions cannot hide data 
+
+
+
+#imp example :-
+
+import random
+from abc import ABC,abstractmethod
+
+class bankaccount(ABC) :
+    def __init__(self,user_name,bank_balance):          # remember that even self is local variable 
+        self.user_name=user_name
+        self.bank_balance=bank_balance
+        self.account_number=random.randint(10000000,10099999)
+    
+    def info(self):
+        print(self.user_name,self.bank_balance)
+
+    @abstractmethod
+    def deposite(self):
+        pass
+    
+    def withderaw(self,amount):
+        if(self.bank_balance > amount and amount >0):
+            self.bank_balance -= amount
+        else:
+            raise ValueError
         
-        
+class saving_account(bankaccount):
+    def __init__(self,user_name,bank_balance):
+        super().__init__(user_name,bank_balance)
+
+    def deposite(self, amount):
+        if(amount > 0):
+            self.bank_balance+=amount
+
+    def balance(self):
+        print(self.__bank_balance)
+        return self.__bank_balance
+
+    def withderaw(self,amount):   # method overriding
+        if self.bank_balance >= amount and self.bank_balance - amount >5000:
+            self.bank_balance -= amount
+        else :
+            print("Minimum balance required is 5000")
 
 
+s1=saving_account("shubham",2000)
+print(s1.user_name)
+s1.withderaw(2000)
+s1.deposite(1000)
+print(s1.bank_balance)
+
+
+
+
+
+
+
+
+
+# abstraction 
+# list deep copy and shallow copy (practicle way)
