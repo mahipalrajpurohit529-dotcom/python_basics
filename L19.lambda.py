@@ -9,7 +9,6 @@
 # def sq (num):
 #     return(num*num)
 # sq(10)
-
 # this above code is way too long by normal way 
 # so we will use lambda fnc
 

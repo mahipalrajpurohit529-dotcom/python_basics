@@ -56,11 +56,11 @@ class sbi(rbiloan):     # second child of abstract class rbiloans
     def intrest(self):      # must always be created even if we only write pass in it
         pass
 
-h1=hdfcloan()
-h1.intrest()
+# h1=hdfcloan()
+# h1.intrest()
 
-s1=sbi()
-s1.intrest
+# s1=sbi()
+# s1.intrest
 
 # only use abstraction when a function of parant must always be used by all child classes
 # child class must always implement the parant class abstract method 
@@ -144,12 +144,79 @@ class a:
 # self => object reference
 # cls => class reference
 
-a1=a()
-a1.f1
+# a1=a()
+# a1.f1
 
-a1.f2()
-a.f2()
-a1.f3(10,20)
-a1.f4()
-a.f4()
+# a1.f2()
+# a.f2()
+# a1.f3(10,20)
+# a1.f4()
+# a.f4()
     
+
+
+
+
+
+
+
+# class rsddoller:
+#     def __init__(self,amount):
+#         self.amount = amount/85
+    
+# r1=rsddoller(100)
+# print(r1)       # see how it returns the memory address 
+
+
+
+
+# what if we want to change what it returns ?
+
+# class rsddoller:
+#     def __init__(self,amount):
+#         self.amount = amount/85
+
+#     def __repr__(self):
+#         return f"hey bro {self.amount}"
+    
+# r1=rsddoller(100)
+# print(r1)       # now it returns "hey bro amount"
+
+
+
+
+# class rseuro:
+#     def __init__(self,amount):
+#         self.amount = amount/90
+
+#     def __repr__(self):
+#         return f"this method returns rs to euro class ==> euro{self.amount}"
+    
+#     @staticmethod
+#     def conversion(x,y):        # you can see how x and y has nothing to do with class or instance variable
+#                                 # that is how you know when to create a static method 
+#         return rseuro(x/y)      # calling the constructor from inside the static method 
+    
+# r1=rseuro(100)
+# print(r1)       # now it returns amount
+# # print(r1.conversion(100,87))        # can be accessed by object
+# # print(rseuro.conversion(1000,87))   # can be accessed by class
+
+
+
+
+# class rseuro(rsddoller):
+#     def __init__(self,amount):
+#         self.amount = amount/90
+
+#     def __repr__(self):
+#         return f"this method returns rs to euro class ==> euro{self.amount}"
+    
+#     @classmethod
+#     def conversion(cls,x,y):
+#         return rseuro(x/y)
+    
+# r1=rseuro(100)
+# print(r1)  
+
+

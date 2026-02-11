@@ -867,54 +867,52 @@ my dream is to succeed as a data scientist and move to germany for a better qual
 
 #imp example :-
 
-import random
-from abc import ABC,abstractmethod
+# import random
+# from abc import ABC,abstractmethod
 
-class bankaccount(ABC) :
-    def __init__(self,user_name,bank_balance):          # remember that even self is local variable 
-        self.user_name=user_name
-        self.bank_balance=bank_balance
-        self.account_number=random.randint(10000000,10099999)
+# class bankaccount(ABC) :
+#     def __init__(self,user_name,bank_balance):          # remember that even self is local variable 
+#         self.user_name=user_name
+#         self.bank_balance=bank_balance
+#         self.account_number=random.randint(10000000,10099999)
     
-    def info(self):
-        print(self.user_name,self.bank_balance)
+#     def info(self):
+#         print(self.user_name,self.bank_balance)
 
-    @abstractmethod
-    def deposite(self):
-        pass
+#     @abstractmethod
+#     def deposite(self):
+#         pass
     
-    def withderaw(self,amount):
-        if(self.bank_balance > amount and amount >0):
-            self.bank_balance -= amount
-        else:
-            raise ValueError
+#     def withderaw(self,amount):
+#         if(self.bank_balance > amount and amount >0):
+#             self.bank_balance -= amount
+#         else:
+#             raise ValueError
         
-class saving_account(bankaccount):
-    def __init__(self,user_name,bank_balance):
-        super().__init__(user_name,bank_balance)
+# class saving_account(bankaccount):
+#     def __init__(self,user_name,bank_balance):
+#         super().__init__(user_name,bank_balance)
 
-    def deposite(self, amount):
-        if(amount > 0):
-            self.bank_balance+=amount
+#     def deposite(self, amount):
+#         if(amount > 0):
+#             self.bank_balance+=amount
 
-    def balance(self):
-        print(self.__bank_balance)
-        return self.__bank_balance
+#     def balance(self):
+#         print(self.__bank_balance)
+#         return self.__bank_balance
 
-    def withderaw(self,amount):   # method overriding
-        if self.bank_balance >= amount and self.bank_balance - amount >5000:
-            self.bank_balance -= amount
-        else :
-            print("Minimum balance required is 5000")
-
-
-s1=saving_account("shubham",2000)
-print(s1.user_name)
-s1.withderaw(2000)
-s1.deposite(1000)
-print(s1.bank_balance)
+#     def withderaw(self,amount):   # method overriding
+#         if self.bank_balance >= amount and self.bank_balance - amount >5000:
+#             self.bank_balance -= amount
+#         else :
+#             print("Minimum balance required is 5000")
 
 
+# s1=saving_account("shubham",2000)
+# print(s1.user_name)
+# s1.withderaw(2000)
+# s1.deposite(1000)
+# print(s1.bank_balance)
 
 
 
@@ -922,5 +920,4 @@ print(s1.bank_balance)
 
 
 
-# abstraction 
-# list deep copy and shallow copy (practicle way)
+
